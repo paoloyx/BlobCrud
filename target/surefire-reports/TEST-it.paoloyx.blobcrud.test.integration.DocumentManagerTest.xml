@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="153.276" errors="1" skipped="0" tests="1" name="it.paoloyx.blobcrud.test.integration.DocumentManagerTest">
+  <properties>
+    <property name="jboss.i18n.generate-proxies" value="true"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
+    <property name="java.vm.version" value="20.4-b02-402"/>
+    <property name="awt.nativeDoubleBuffering" value="true"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="mrj.build" value="11D50b"/>
+    <property name="java.vm.vendor" value="Apple Inc."/>
+    <property name="java.vendor.url" value="http://www.apple.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="IT"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/paoloyx/Progetti/workspace_indigo/blobcrud"/>
+    <property name="java.runtime.version" value="1.6.0_29-b11-402-11D50b"/>
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment"/>
+    <property name="basedir" value="/Users/paoloyx/Progetti/workspace_indigo/blobcrud"/>
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="surefire.real.class.path" value="/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/surefire/surefirebooter2086007329435421833.jar"/>
+    <property name="java.io.tmpdir" value="/var/folders/qd/dwkf0b9n6_n177kjfbcp0p2m0000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="sun.jnu.encoding" value="MacRoman"/>
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="surefire.test.class.path" value="/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes:/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes:/Users/paoloyx/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/paoloyx/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-core/3.1.0.RELEASE/spring-core-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-asm/3.1.0.RELEASE/spring-asm-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/paoloyx/.m2/repository/org/hibernate/hibernate-core/4.1.0.Final/hibernate-core-4.1.0.Final.jar:/Users/paoloyx/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/paoloyx/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/paoloyx/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar:/Users/paoloyx/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/Users/paoloyx/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/Users/paoloyx/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar:/Users/paoloyx/.m2/repository/org/jboss/logging/jboss-logging/3.1.0.CR2/jboss-logging-3.1.0.CR2.jar:/Users/paoloyx/.m2/repository/org/javassist/javassist/3.15.0-GA/javassist-3.15.0-GA.jar:/Users/paoloyx/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.1.Final/hibernate-commons-annotations-4.0.1.Final.jar:/Users/paoloyx/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/Users/paoloyx/.m2/repository/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar:/Users/paoloyx/.m2/repository/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-test/3.1.0.RELEASE/spring-test-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-tx/3.1.0.RELEASE/spring-tx-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-aop/3.1.0.RELEASE/spring-aop-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-beans/3.1.0.RELEASE/spring-beans-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-context/3.1.0.RELEASE/spring-context-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-expression/3.1.0.RELEASE/spring-expression-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-orm/3.1.0.RELEASE/spring-orm-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-jdbc/3.1.0.RELEASE/spring-jdbc-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/postgresql/postgresql/9.1-901.jdbc4/postgresql-9.1-901.jdbc4.jar:/Users/paoloyx/Progetti/workspace_indigo/blobcrud/ext_libs/ojdbc6.jar:/Users/paoloyx/.m2/repository/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar:/Users/paoloyx/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar:/Users/paoloyx/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/Users/paoloyx/.m2/repository/commons-io/commons-io/2.1/commons-io-2.1.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.7.3"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/paoloyx"/>
+    <property name="user.timezone" value="Europe/Rome"/>
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="file.encoding" value="MacRoman"/>
+    <property name="user.name" value="paoloyx"/>
+    <property name="java.class.path" value="/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes:/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes:/Users/paoloyx/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/paoloyx/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-core/3.1.0.RELEASE/spring-core-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-asm/3.1.0.RELEASE/spring-asm-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/paoloyx/.m2/repository/org/hibernate/hibernate-core/4.1.0.Final/hibernate-core-4.1.0.Final.jar:/Users/paoloyx/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/paoloyx/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/paoloyx/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar:/Users/paoloyx/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/Users/paoloyx/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/Users/paoloyx/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar:/Users/paoloyx/.m2/repository/org/jboss/logging/jboss-logging/3.1.0.CR2/jboss-logging-3.1.0.CR2.jar:/Users/paoloyx/.m2/repository/org/javassist/javassist/3.15.0-GA/javassist-3.15.0-GA.jar:/Users/paoloyx/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.1.Final/hibernate-commons-annotations-4.0.1.Final.jar:/Users/paoloyx/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/Users/paoloyx/.m2/repository/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar:/Users/paoloyx/.m2/repository/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-test/3.1.0.RELEASE/spring-test-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-tx/3.1.0.RELEASE/spring-tx-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-aop/3.1.0.RELEASE/spring-aop-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-beans/3.1.0.RELEASE/spring-beans-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-context/3.1.0.RELEASE/spring-context-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-expression/3.1.0.RELEASE/spring-expression-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-orm/3.1.0.RELEASE/spring-orm-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-jdbc/3.1.0.RELEASE/spring-jdbc-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/postgresql/postgresql/9.1-901.jdbc4/postgresql-9.1-901.jdbc4.jar:/Users/paoloyx/Progetti/workspace_indigo/blobcrud/ext_libs/ojdbc6.jar:/Users/paoloyx/.m2/repository/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar:/Users/paoloyx/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar:/Users/paoloyx/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/Users/paoloyx/.m2/repository/commons-io/commons-io/2.1/commons-io-2.1.jar:"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
+    <property name="sun.java.command" value="/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/surefire/surefirebooter2086007329435421833.jar /Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/surefire/surefire4928042026723574440tmp /Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/surefire/surefire6831103914888614504tmp"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="it"/>
+    <property name="awt.toolkit" value="apple.awt.CToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_29"/>
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
+    <property name="java.vendor" value="Apple Inc."/>
+    <property name="localRepository" value="/Users/paoloyx/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="mrj.version" value="1070.1.6.0_29-402"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="152.883" classname="it.paoloyx.blobcrud.test.integration.DocumentManagerTest" name="testInsertDocument">
+    <error message="$Proxy19 cannot be cast to oracle.jdbc.OracleConnection" type="java.lang.ClassCastException">java.lang.ClassCastException: $Proxy19 cannot be cast to oracle.jdbc.OracleConnection
+	at oracle.sql.BLOB.createTemporary(BLOB.java:708)
+	at it.paoloyx.blobcrud.usertypes.BlobUserType.nullSafeSet(BlobUserType.java:63)
+	at org.hibernate.type.CustomType.nullSafeSet(CustomType.java:155)
+	at org.hibernate.persister.entity.AbstractEntityPersister.dehydrate(AbstractEntityPersister.java:2599)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2853)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3297)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:88)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:362)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:354)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:275)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:326)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:52)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1127)
+	at it.paoloyx.blobcrud.test.integration.DocumentManagerTest.testInsertDocument(DocumentManagerTest.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:83)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:35)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:115)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</error>
+    <system-out>@HL
+@HL-------------------------------------------------------
+@HL T E S T S
+@HL-------------------------------------------------------
+@SLRunning it.paoloyx.blobcrud.test.integration.DocumentManagerTest
+log4j: reset attribute= &quot;false&quot;.
+log4j: Threshold =&quot;null&quot;.
+log4j: Retreiving an instance of org.apache.log4j.Logger.
+log4j: Setting [org.apache] additivity to [true].
+log4j: Level value for org.apache is  [DEBUG].
+log4j: org.apache level set to DEBUG
+log4j: Retreiving an instance of org.apache.log4j.Logger.
+log4j: Setting [org.springframework] additivity to [true].
+log4j: Level value for org.springframework is  [DEBUG].
+log4j: org.springframework level set to DEBUG
+log4j: Retreiving an instance of org.apache.log4j.Logger.
+log4j: Setting [java.sql] additivity to [true].
+log4j: Level value for java.sql is  [DEBUG].
+log4j: java.sql level set to DEBUG
+log4j: Retreiving an instance of org.apache.log4j.Logger.
+log4j: Setting [org.hibernate] additivity to [true].
+log4j: Level value for org.hibernate is  [ALL].
+log4j: org.hibernate level set to ALL
+log4j: Level value for root is  [DEBUG].
+log4j: root level set to DEBUG
+log4j: Class name: [org.apache.log4j.ConsoleAppender]
+log4j: Parsing layout of class: &quot;org.apache.log4j.PatternLayout&quot;
+log4j: Setting property [conversionPattern] to [%p [%t] %c{1}.%M(%L) | %m%n].
+log4j: Adding appender named [CONSOLE] to category [root].
+log4j: Class name: [org.apache.log4j.DailyRollingFileAppender]
+log4j: Setting property [file] to [blobcrud.log].
+log4j: Setting property [append] to [true].
+log4j: Setting property [datePattern] to [.yyyy-MM-dd].
+log4j: Parsing layout of class: &quot;org.apache.log4j.PatternLayout&quot;
+log4j: Setting property [conversionPattern] to [%d{ISO8601} %p %C{1}.%M(%L) | %m%n].
+log4j: setFile called: blobcrud.log, true
+log4j: setFile ended
+log4j: Appender [FILE] to be rolled at midnight.
+log4j: Adding appender named [FILE] to category [root].
+DEBUG [main] SpringJUnit4ClassRunner.&lt;init&gt;(106) | SpringJUnit4ClassRunner constructor called with [class it.paoloyx.blobcrud.test.integration.DocumentManagerTest].
+DEBUG [main] DelegatingSmartContextLoader.delegateProcessing(75) | Delegating to GenericXmlContextLoader to process context configuration [ContextConfigurationAttributes@7b2884e0 declaringClass = &apos;it.paoloyx.blobcrud.test.integration.DocumentManagerTest&apos;, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, inheritLocations = true, contextLoaderClass = &apos;org.springframework.test.context.ContextLoader&apos;].
+DEBUG [main] ContextLoaderUtils.resolveActiveProfiles(236) | Could not find an &apos;annotation declaring class&apos; for annotation type [interface org.springframework.test.context.ActiveProfiles] and class [class it.paoloyx.blobcrud.test.integration.DocumentManagerTest]
+INFO [main] TestContextManager.retrieveTestExecutionListeners(185) | @TestExecutionListeners is not present for class [class it.paoloyx.blobcrud.test.integration.DocumentManagerTest]: using defaults.
+DEBUG [main] ProfileValueUtils.retrieveProfileValueSource(68) | Retrieved @ProfileValueSourceConfiguration [null] for test class [it.paoloyx.blobcrud.test.integration.DocumentManagerTest]
+DEBUG [main] ProfileValueUtils.retrieveProfileValueSource(80) | Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [it.paoloyx.blobcrud.test.integration.DocumentManagerTest]
+DEBUG [main] ProfileValueUtils.retrieveProfileValueSource(68) | Retrieved @ProfileValueSourceConfiguration [null] for test class [it.paoloyx.blobcrud.test.integration.DocumentManagerTest]
+DEBUG [main] ProfileValueUtils.retrieveProfileValueSource(80) | Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [it.paoloyx.blobcrud.test.integration.DocumentManagerTest]
+DEBUG [main] ProfileValueUtils.retrieveProfileValueSource(68) | Retrieved @ProfileValueSourceConfiguration [null] for test class [it.paoloyx.blobcrud.test.integration.DocumentManagerTest]
+DEBUG [main] ProfileValueUtils.retrieveProfileValueSource(80) | Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [it.paoloyx.blobcrud.test.integration.DocumentManagerTest]
+DEBUG [main] DependencyInjectionTestExecutionListener.prepareTestInstance(73) | Performing dependency injection for test context [[TestContext@16ba5c7a testClass = DocumentManagerTest, testInstance = it.paoloyx.blobcrud.test.integration.DocumentManagerTest@250d593e, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@f5e0873 testClass = DocumentManagerTest, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, activeProfiles = &apos;{}&apos;, contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;]]].
+DEBUG [main] DelegatingSmartContextLoader.loadContext(226) | Delegating to GenericXmlContextLoader to load context from [MergedContextConfiguration@f5e0873 testClass = DocumentManagerTest, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, activeProfiles = &apos;{}&apos;, contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;].
+DEBUG [main] AbstractGenericContextLoader.loadContext(93) | Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@f5e0873 testClass = DocumentManagerTest, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, activeProfiles = &apos;{}&apos;, contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;]].
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] PathMatchingResourcePatternResolver.doFindMatchingFileSystemResources(550) | Looking for matching resources in directory tree [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext*.xml]
+DEBUG [main] PathMatchingResourcePatternResolver.findPathMatchingResources(351) | Resolved location pattern [classpath*:META-INF/spring/applicationContext*.xml] to resources [file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext-provider.xml], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext-repository.xml], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext-resources.xml], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext-service.xml], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext.xml]]
+INFO [main] XmlBeanDefinitionReader.loadBeanDefinitions(315) | Loading XML bean definitions from file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext-provider.xml]
+DEBUG [main] DefaultDocumentLoader.loadDocument(72) | Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+DEBUG [main] PluggableSchemaResolver.getSchemaMappings(140) | Loading schema mappings from [META-INF/spring.schemas]
+DEBUG [main] PluggableSchemaResolver.getSchemaMappings(146) | Loaded schema mappings: {http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-3.1.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://www.springframework.org/schema/task/spring-task-3.1.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-3.1.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-3.1.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-2.5.xsd=org/springframework/transaction/config/spring-tx-2.5.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.1.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/context/spring-context-3.1.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.1.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.1.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache-3.1.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-2.0.xsd=org/springframework/transaction/config/spring-tx-2.0.xsd, http://www.springframework.org/schema/aop/spring-aop-3.1.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-3.0.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd}
+DEBUG [main] PluggableSchemaResolver.resolveEntity(118) | Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.1.xsd
+DEBUG [main] DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(108) | Loading bean definitions
+INFO [main] XmlBeanDefinitionReader.loadBeanDefinitions(315) | Loading XML bean definitions from file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext-repository.xml]
+DEBUG [main] DefaultDocumentLoader.loadDocument(72) | Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+DEBUG [main] PluggableSchemaResolver.resolveEntity(118) | Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.1.xsd
+DEBUG [main] DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(108) | Loading bean definitions
+INFO [main] XmlBeanDefinitionReader.loadBeanDefinitions(315) | Loading XML bean definitions from file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext-resources.xml]
+DEBUG [main] DefaultDocumentLoader.loadDocument(72) | Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+DEBUG [main] PluggableSchemaResolver.resolveEntity(118) | Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.1.xsd
+DEBUG [main] DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(108) | Loading bean definitions
+INFO [main] XmlBeanDefinitionReader.loadBeanDefinitions(315) | Loading XML bean definitions from file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext-service.xml]
+DEBUG [main] DefaultDocumentLoader.loadDocument(72) | Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+DEBUG [main] PluggableSchemaResolver.resolveEntity(118) | Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.1.xsd
+DEBUG [main] DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(108) | Loading bean definitions
+INFO [main] XmlBeanDefinitionReader.loadBeanDefinitions(315) | Loading XML bean definitions from file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/applicationContext.xml]
+DEBUG [main] DefaultDocumentLoader.loadDocument(72) | Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+DEBUG [main] PluggableSchemaResolver.resolveEntity(118) | Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.1.xsd
+DEBUG [main] PluggableSchemaResolver.resolveEntity(118) | Found XML schema [http://www.springframework.org/schema/context/spring-context-3.1.xsd] in classpath: org/springframework/context/config/spring-context-3.1.xsd
+DEBUG [main] PluggableSchemaResolver.resolveEntity(118) | Found XML schema [http://www.springframework.org/schema/tool/spring-tool-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-tool-3.1.xsd
+DEBUG [main] PluggableSchemaResolver.resolveEntity(118) | Found XML schema [http://www.springframework.org/schema/tx/spring-tx-3.1.xsd] in classpath: org/springframework/transaction/config/spring-tx-3.1.xsd
+DEBUG [main] DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(108) | Loading bean definitions
+DEBUG [main] DefaultNamespaceHandlerResolver.getHandlerMappings(156) | Loaded NamespaceHandler mappings: {http://www.springframework.org/schema/p=org.springframework.beans.factory.xml.SimplePropertyNamespaceHandler, http://www.springframework.org/schema/util=org.springframework.beans.factory.xml.UtilNamespaceHandler, http://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler, http://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler, http://www.springframework.org/schema/jdbc=org.springframework.jdbc.config.JdbcNamespaceHandler, http://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler, http://www.springframework.org/schema/c=org.springframework.beans.factory.xml.SimpleConstructorNamespaceHandler, http://www.springframework.org/schema/tx=org.springframework.transaction.config.TxNamespaceHandler, http://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler, http://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler, http://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler}
+DEBUG [main] PathMatchingResourcePatternResolver.doFindMatchingFileSystemResources(550) | Looking for matching resources in directory tree [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes/it/paoloyx/blobcrud]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes/it/paoloyx/blobcrud] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes/it/paoloyx/blobcrud/test] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes/it/paoloyx/blobcrud/test/integration] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.doFindMatchingFileSystemResources(550) | Looking for matching resources in directory tree [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/model] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/provider] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/repository] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/repository/hibernate] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/service] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/service/impl] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/usertypes] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.findPathMatchingResources(351) | Resolved location pattern [classpath*:it/paoloyx/blobcrud/**/*.class] to resources [file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes/it/paoloyx/blobcrud/test/integration/DocumentManagerTest.class], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/model/Document.class], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/provider/FileProvider.class], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/repository/DocumentDAO.class], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/repository/hibernate/DocumentDAOHibernate.class], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/service/DocumentManager.class], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/service/impl/DocumentManagerImpl.class], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/usertypes/BlobUserType.class]]
+DEBUG [main] XmlBeanDefinitionReader.loadBeanDefinitions(216) | Loaded 16 bean definitions from location pattern [classpath*:META-INF/spring/applicationContext*.xml]
+INFO [main] GenericApplicationContext.prepareRefresh(495) | Refreshing org.springframework.context.support.GenericApplicationContext@23abcc03: startup date [Mon Feb 20 11:18:22 CET 2012]; root of context hierarchy
+DEBUG [main] GenericApplicationContext.obtainFreshBeanFactory(525) | Bean factory for org.springframework.context.support.GenericApplicationContext@23abcc03: org.springframework.beans.factory.support.DefaultListableBeanFactory@7e94af2f: defining beans [fileProvider,documentDao,dataSource,documentManager,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,sessionFactory,transactionManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor]; root of factory hierarchy
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0&apos; to allow for resolving potential circular references
+DEBUG [main] PathMatchingResourcePatternResolver.doFindMatchingFileSystemResources(550) | Looking for matching resources in directory tree [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/*.properties]
+DEBUG [main] PathMatchingResourcePatternResolver.findPathMatchingResources(351) | Resolved location pattern [classpath*:META-INF/spring/*.properties] to resources [file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/database.properties], file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/file.properties]]
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0&apos;
+DEBUG [main] MutablePropertySources.addLast(103) | Adding [environmentProperties] PropertySource with lowest search precedence
+INFO [main] PropertySourcesPlaceholderConfigurer.loadProperties(177) | Loading properties file from file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/database.properties]
+INFO [main] PropertySourcesPlaceholderConfigurer.loadProperties(177) | Loading properties file from file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/META-INF/spring/file.properties]
+DEBUG [main] MutablePropertySources.addLast(103) | Adding [localProperties] PropertySource with lowest search precedence
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;fileToPersist.absolutePath&apos; in [environmentProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;fileToPersist.absolutePath&apos; in [systemProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;fileToPersist.absolutePath&apos; in [systemEnvironment]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(90) | Could not find key &apos;fileToPersist.absolutePath&apos; in any property source. Returning [null]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;fileToPersist.absolutePath&apos; in [localProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(76) | Found key &apos;fileToPersist.absolutePath&apos; in [localProperties] with type [String] and value &apos;/Users/paoloyx/Desktop/alfresco-community-4.0.d-installer-osx.app.tar.gz&apos;
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.driverClassName&apos; in [environmentProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.driverClassName&apos; in [systemProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.driverClassName&apos; in [systemEnvironment]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(90) | Could not find key &apos;database.driverClassName&apos; in any property source. Returning [null]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.driverClassName&apos; in [localProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(76) | Found key &apos;database.driverClassName&apos; in [localProperties] with type [String] and value &apos;oracle.jdbc.OracleDriver&apos;
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.url&apos; in [environmentProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.url&apos; in [systemProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.url&apos; in [systemEnvironment]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(90) | Could not find key &apos;database.url&apos; in any property source. Returning [null]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.url&apos; in [localProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(76) | Found key &apos;database.url&apos; in [localProperties] with type [String] and value &apos;jdbc:oracle:thin:@localhost:1521:devdb&apos;
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.username&apos; in [environmentProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.username&apos; in [systemProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.username&apos; in [systemEnvironment]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(90) | Could not find key &apos;database.username&apos; in any property source. Returning [null]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.username&apos; in [localProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(76) | Found key &apos;database.username&apos; in [localProperties] with type [String] and value &apos;docuknox_pfilippelli&apos;
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.password&apos; in [environmentProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.password&apos; in [systemProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.password&apos; in [systemEnvironment]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(90) | Could not find key &apos;database.password&apos; in any property source. Returning [null]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.password&apos; in [localProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(76) | Found key &apos;database.password&apos; in [localProperties] with type [String] and value &apos;docuknox_pfilippelli&apos;
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.validationQuery&apos; in [environmentProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.validationQuery&apos; in [systemProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.validationQuery&apos; in [systemEnvironment]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(90) | Could not find key &apos;database.validationQuery&apos; in any property source. Returning [null]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.validationQuery&apos; in [localProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(76) | Found key &apos;database.validationQuery&apos; in [localProperties] with type [String] and value &apos;SELECT 1 from dual&apos;
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.dialect&apos; in [environmentProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.dialect&apos; in [systemProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.dialect&apos; in [systemEnvironment]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(90) | Could not find key &apos;database.dialect&apos; in any property source. Returning [null]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(70) | Searching for key &apos;database.dialect&apos; in [localProperties]
+DEBUG [main] PropertySourcesPropertyResolver.getProperty(76) | Found key &apos;database.dialect&apos; in [localProperties] with type [String] and value &apos;org.hibernate.dialect.OracleDialect&apos;
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalPersistenceAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.context.annotation.internalPersistenceAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.context.annotation.internalPersistenceAnnotationProcessor&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.context.annotation.internalPersistenceAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0&apos;
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.aop.config.internalAutoProxyCreator&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.aop.config.internalAutoProxyCreator&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.aop.config.internalAutoProxyCreator&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.aop.config.internalAutoProxyCreator&apos;
+DEBUG [main] GenericApplicationContext.initMessageSource(794) | Unable to locate MessageSource with name &apos;messageSource&apos;: using default [org.springframework.context.support.DelegatingMessageSource@687ea9]
+DEBUG [main] GenericApplicationContext.initApplicationEventMulticaster(818) | Unable to locate ApplicationEventMulticaster with name &apos;applicationEventMulticaster&apos;: using default [org.springframework.context.event.SimpleApplicationEventMulticaster@418bbf55]
+INFO [main] DefaultListableBeanFactory.preInstantiateSingletons(557) | Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7e94af2f: defining beans [fileProvider,documentDao,dataSource,documentManager,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,sessionFactory,transactionManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.context.annotation.internalPersistenceAnnotationProcessor&apos;
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.aop.config.internalAutoProxyCreator&apos;
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.doGetBean(241) | Returning eagerly cached instance of singleton bean &apos;org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0&apos; that is not fully initialized yet - a consequence of a circular reference
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0&apos;
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;org.springframework.transaction.interceptor.TransactionInterceptor#0&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;org.springframework.transaction.interceptor.TransactionInterceptor#0&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;org.springframework.transaction.interceptor.TransactionInterceptor#0&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0&apos;
+DEBUG [main] DefaultListableBeanFactory.invokeInitMethods(1498) | Invoking afterPropertiesSet() on bean with name &apos;org.springframework.transaction.interceptor.TransactionInterceptor#0&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;org.springframework.transaction.interceptor.TransactionInterceptor#0&apos;
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0&apos;
+DEBUG [main] GenericApplicationContext.initLifecycleProcessor(845) | Unable to locate LifecycleProcessor with name &apos;lifecycleProcessor&apos;: using default [org.springframework.context.support.DefaultLifecycleProcessor@23904e0d]
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;lifecycleProcessor&apos;
+DEBUG [main] TestContext.getApplicationContext(150) | Storing ApplicationContext for test class [class it.paoloyx.blobcrud.test.integration.DocumentManagerTest] in cache under key [[MergedContextConfiguration@f5e0873 testClass = DocumentManagerTest, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, activeProfiles = &apos;{}&apos;, contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;]].
+DEBUG [main] InjectionMetadata.&lt;init&gt;(60) | Found injected element on class [it.paoloyx.blobcrud.test.integration.DocumentManagerTest]: AutowiredFieldElement for private org.hibernate.SessionFactory it.paoloyx.blobcrud.test.integration.DocumentManagerTest.sessionFactory
+DEBUG [main] InjectionMetadata.&lt;init&gt;(60) | Found injected element on class [it.paoloyx.blobcrud.test.integration.DocumentManagerTest]: AutowiredFieldElement for private it.paoloyx.blobcrud.repository.DocumentDAO it.paoloyx.blobcrud.test.integration.DocumentManagerTest.documentDao
+DEBUG [main] InjectionMetadata.&lt;init&gt;(60) | Found injected element on class [it.paoloyx.blobcrud.test.integration.DocumentManagerTest]: AutowiredFieldElement for private it.paoloyx.blobcrud.provider.FileProvider it.paoloyx.blobcrud.test.integration.DocumentManagerTest.fileProvider
+DEBUG [main] InjectionMetadata.inject(85) | Processing injected method of bean &apos;it.paoloyx.blobcrud.test.integration.DocumentManagerTest&apos;: AutowiredFieldElement for private org.hibernate.SessionFactory it.paoloyx.blobcrud.test.integration.DocumentManagerTest.sessionFactory
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;sessionFactory&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;sessionFactory&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;sessionFactory&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;dataSource&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;dataSource&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;dataSource&apos; to allow for resolving potential circular references
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;dataSource&apos;
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] StandardEnvironment.&lt;init&gt;(100) | Initializing new StandardEnvironment
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.addLast(103) | Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG [main] StandardEnvironment.&lt;init&gt;(102) | Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG [main] DefaultListableBeanFactory.invokeInitMethods(1498) | Invoking afterPropertiesSet() on bean with name &apos;sessionFactory&apos;
+DEBUG [main] logging.&lt;clinit&gt;(175) | Logging Provider: org.jboss.logging.Log4jLoggerProvider
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration boolean -&gt; org.hibernate.type.BooleanType@24553763
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration boolean -&gt; org.hibernate.type.BooleanType@24553763
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.Boolean -&gt; org.hibernate.type.BooleanType@24553763
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration numeric_boolean -&gt; org.hibernate.type.NumericBooleanType@60ab835a
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration true_false -&gt; org.hibernate.type.TrueFalseType@55443800
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration yes_no -&gt; org.hibernate.type.YesNoType@151ff451
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration byte -&gt; org.hibernate.type.ByteType@64a22671
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration byte -&gt; org.hibernate.type.ByteType@64a22671
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.Byte -&gt; org.hibernate.type.ByteType@64a22671
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration character -&gt; org.hibernate.type.CharacterType@66178655
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration char -&gt; org.hibernate.type.CharacterType@66178655
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.Character -&gt; org.hibernate.type.CharacterType@66178655
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration short -&gt; org.hibernate.type.ShortType@29a220e6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration short -&gt; org.hibernate.type.ShortType@29a220e6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.Short -&gt; org.hibernate.type.ShortType@29a220e6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration integer -&gt; org.hibernate.type.IntegerType@1c67c1a6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration int -&gt; org.hibernate.type.IntegerType@1c67c1a6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.Integer -&gt; org.hibernate.type.IntegerType@1c67c1a6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration long -&gt; org.hibernate.type.LongType@197ebe66
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration long -&gt; org.hibernate.type.LongType@197ebe66
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.Long -&gt; org.hibernate.type.LongType@197ebe66
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration float -&gt; org.hibernate.type.FloatType@2392d604
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration float -&gt; org.hibernate.type.FloatType@2392d604
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.Float -&gt; org.hibernate.type.FloatType@2392d604
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration double -&gt; org.hibernate.type.DoubleType@14426a6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration double -&gt; org.hibernate.type.DoubleType@14426a6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.Double -&gt; org.hibernate.type.DoubleType@14426a6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration big_decimal -&gt; org.hibernate.type.BigDecimalType@5aaefcbb
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.math.BigDecimal -&gt; org.hibernate.type.BigDecimalType@5aaefcbb
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration big_integer -&gt; org.hibernate.type.BigIntegerType@7e543cb1
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.math.BigInteger -&gt; org.hibernate.type.BigIntegerType@7e543cb1
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration string -&gt; org.hibernate.type.StringType@5029d294
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.String -&gt; org.hibernate.type.StringType@5029d294
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration url -&gt; org.hibernate.type.UrlType@514d556e
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.net.URL -&gt; org.hibernate.type.UrlType@514d556e
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration date -&gt; org.hibernate.type.DateType@798baf36
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.sql.Date -&gt; org.hibernate.type.DateType@798baf36
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration time -&gt; org.hibernate.type.TimeType@3545fe3b
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.sql.Time -&gt; org.hibernate.type.TimeType@3545fe3b
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration timestamp -&gt; org.hibernate.type.TimestampType@3b8c8aea
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.sql.Timestamp -&gt; org.hibernate.type.TimestampType@3b8c8aea
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.util.Date -&gt; org.hibernate.type.TimestampType@3b8c8aea
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration dbtimestamp -&gt; org.hibernate.type.DbTimestampType@2e39060b
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration calendar -&gt; org.hibernate.type.CalendarType@132f9bcd
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.util.Calendar -&gt; org.hibernate.type.CalendarType@132f9bcd
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.util.GregorianCalendar -&gt; org.hibernate.type.CalendarType@132f9bcd
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration calendar_date -&gt; org.hibernate.type.CalendarDateType@69022de4
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration locale -&gt; org.hibernate.type.LocaleType@1702679a
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.util.Locale -&gt; org.hibernate.type.LocaleType@1702679a
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration currency -&gt; org.hibernate.type.CurrencyType@7f1e1bbf
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.util.Currency -&gt; org.hibernate.type.CurrencyType@7f1e1bbf
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration timezone -&gt; org.hibernate.type.TimeZoneType@50bfd66a
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.util.TimeZone -&gt; org.hibernate.type.TimeZoneType@50bfd66a
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration class -&gt; org.hibernate.type.ClassType@1975b7f9
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.Class -&gt; org.hibernate.type.ClassType@1975b7f9
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration uuid-binary -&gt; org.hibernate.type.UUIDBinaryType@7c83d8be
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.util.UUID -&gt; org.hibernate.type.UUIDBinaryType@7c83d8be
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration uuid-char -&gt; org.hibernate.type.UUIDCharType@366ef7ba
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration pg-uuid -&gt; org.hibernate.type.PostgresUUIDType@31984a9d
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration binary -&gt; org.hibernate.type.BinaryType@37ed1dbe
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration byte[] -&gt; org.hibernate.type.BinaryType@37ed1dbe
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration [B -&gt; org.hibernate.type.BinaryType@37ed1dbe
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration wrapper-binary -&gt; org.hibernate.type.WrapperBinaryType@650df4e2
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration Byte[] -&gt; org.hibernate.type.WrapperBinaryType@650df4e2
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration [Ljava.lang.Byte; -&gt; org.hibernate.type.WrapperBinaryType@650df4e2
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration image -&gt; org.hibernate.type.ImageType@2345e5a6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration characters -&gt; org.hibernate.type.CharArrayType@60dc3b82
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration char[] -&gt; org.hibernate.type.CharArrayType@60dc3b82
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration [C -&gt; org.hibernate.type.CharArrayType@60dc3b82
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration wrapper-characters -&gt; org.hibernate.type.CharacterArrayType@25c7f37d
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration [Ljava.lang.Character; -&gt; org.hibernate.type.CharacterArrayType@25c7f37d
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration Character[] -&gt; org.hibernate.type.CharacterArrayType@25c7f37d
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration text -&gt; org.hibernate.type.TextType@68fc8e75
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration blob -&gt; org.hibernate.type.BlobType@76705d28
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.sql.Blob -&gt; org.hibernate.type.BlobType@76705d28
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration materialized_blob -&gt; org.hibernate.type.MaterializedBlobType@63e708b2
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration clob -&gt; org.hibernate.type.ClobType@1fdbb27d
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.sql.Clob -&gt; org.hibernate.type.ClobType@1fdbb27d
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration materialized_clob -&gt; org.hibernate.type.MaterializedClobType@4cf221f6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration serializable -&gt; org.hibernate.type.SerializableType@290e1513
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration object -&gt; org.hibernate.type.ObjectType@50dfc362
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration java.lang.Object -&gt; org.hibernate.type.ObjectType@50dfc362
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration imm_date -&gt; org.hibernate.type.AdaptedImmutableType@537a7706
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration imm_time -&gt; org.hibernate.type.AdaptedImmutableType@d1c55bb
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration imm_timestamp -&gt; org.hibernate.type.AdaptedImmutableType@3f406eb6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration imm_dbtimestamp -&gt; org.hibernate.type.AdaptedImmutableType@1f248f2b
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration imm_calendar -&gt; org.hibernate.type.AdaptedImmutableType@19336006
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration imm_calendar_date -&gt; org.hibernate.type.AdaptedImmutableType@7be536d6
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration imm_binary -&gt; org.hibernate.type.AdaptedImmutableType@5735b26
+DEBUG [main] BasicTypeRegistry.register(143) | Adding type registration imm_serializable -&gt; org.hibernate.type.AdaptedImmutableType@58651e95
+INFO [main] Version.&lt;clinit&gt;(37) | HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+INFO [main] Version.logVersion(41) | HHH000412: Hibernate Core {4.1.0.Final}
+INFO [main] Environment.&lt;clinit&gt;(239) | HHH000206: hibernate.properties not found
+INFO [main] Environment.buildBytecodeProvider(342) | HHH000021: Bytecode provider name : javassist
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [uuid2] -&gt; [org.hibernate.id.UUIDGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [guid] -&gt; [org.hibernate.id.GUIDGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [uuid] -&gt; [org.hibernate.id.UUIDHexGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [uuid.hex] -&gt; [org.hibernate.id.UUIDHexGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [hilo] -&gt; [org.hibernate.id.TableHiLoGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [assigned] -&gt; [org.hibernate.id.Assigned]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [identity] -&gt; [org.hibernate.id.IdentityGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [select] -&gt; [org.hibernate.id.SelectGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [sequence] -&gt; [org.hibernate.id.SequenceGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [seqhilo] -&gt; [org.hibernate.id.SequenceHiLoGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [increment] -&gt; [org.hibernate.id.IncrementGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [foreign] -&gt; [org.hibernate.id.ForeignGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [sequence-identity] -&gt; [org.hibernate.id.SequenceIdentityGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [enhanced-sequence] -&gt; [org.hibernate.id.enhanced.SequenceStyleGenerator]
+DEBUG [main] DefaultIdentifierGeneratorFactory.register(93) | Registering IdentifierGenerator strategy [enhanced-table] -&gt; [org.hibernate.id.enhanced.TableGenerator]
+DEBUG [main] PathMatchingResourcePatternResolver.doFindMatchingFileSystemResources(550) | Looking for matching resources in directory tree [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/model]
+DEBUG [main] PathMatchingResourcePatternResolver.doRetrieveMatchingFiles(612) | Searching directory [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/model] for files matching pattern [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/model/**/*.class]
+DEBUG [main] PathMatchingResourcePatternResolver.findPathMatchingResources(351) | Resolved location pattern [classpath*:it/paoloyx/blobcrud/model/**/*.class] to resources [file [/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes/it/paoloyx/blobcrud/model/Document.class]]
+DEBUG [main] IntegratorServiceImpl.addIntegrator(59) | Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+DEBUG [main] Configuration.buildSessionFactory(1725) | Preparing to build session factory with filters : {}
+TRACE [main] Configuration.secondPassCompile(1307) | Starting secondPassCompile() processing
+DEBUG [main] Configuration.processHbmXmlQueue(3391) | Processing hbm.xml files
+DEBUG [main] Configuration.processAnnotatedClassesQueue(3421) | Process annotated classes
+DEBUG [main] AnnotationBinder.bindClass(529) | Binding entity from annotated class: it.paoloyx.blobcrud.model.Document
+DEBUG [main] Ejb3Column.bind(196) | Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+DEBUG [main] AnnotationBinder.determineSharedCacheMode(990) | No value specified for &apos;javax.persistence.sharedCache.mode&apos;; using UNSPECIFIED
+DEBUG [main] EntityBinder.bindEntity(359) | Import with entity name Document
+DEBUG [main] EntityBinder.bindTable(529) | Bind entity it.paoloyx.blobcrud.model.Document on table DOCUMENT
+TRACE [main] AnnotationBinder.processElementAnnotations(1450) | Processing annotations of it.paoloyx.blobcrud.model.Document.id
+DEBUG [main] Ejb3Column.bind(196) | Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=DOCUMENT_ID, insertable=true, updatable=true, unique=false}
+DEBUG [main] PropertyBinder.makePropertyAndValue(176) | MetadataSourceProcessor property id with lazy=false
+DEBUG [main] SimpleValueBinder.make(304) | building SimpleValue for id
+DEBUG [main] PropertyBinder.makeProperty(256) | Building property id
+TRACE [main] PropertyBinder.makeProperty(312) | Cascading id with null
+TRACE [main] AnnotationBinder.processId(2131) | Bind @Id on id
+TRACE [main] AnnotationBinder.processElementAnnotations(1450) | Processing annotations of it.paoloyx.blobcrud.model.Document.content
+DEBUG [main] Ejb3Column.bind(196) | Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=DOCUMENT_CONTENT, insertable=true, updatable=true, unique=false}
+DEBUG [main] PropertyBinder.makePropertyAndValue(176) | MetadataSourceProcessor property content with lazy=false
+DEBUG [main] SimpleValueBinder.make(304) | building SimpleValue for content
+DEBUG [main] PropertyBinder.makeProperty(256) | Building property content
+TRACE [main] PropertyBinder.makeProperty(312) | Cascading content with null
+TRACE [main] AnnotationBinder.processElementAnnotations(1450) | Processing annotations of it.paoloyx.blobcrud.model.Document.title
+DEBUG [main] Ejb3Column.bind(196) | Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=DOCUMENT_TITLE, insertable=true, updatable=true, unique=false}
+DEBUG [main] PropertyBinder.makePropertyAndValue(176) | MetadataSourceProcessor property title with lazy=false
+DEBUG [main] SimpleValueBinder.make(304) | building SimpleValue for title
+DEBUG [main] PropertyBinder.makeProperty(256) | Building property title
+TRACE [main] PropertyBinder.makeProperty(312) | Cascading title with null
+TRACE [main] AnnotationBinder.processElementAnnotations(1450) | Processing annotations of it.paoloyx.blobcrud.model.Document.version
+DEBUG [main] Ejb3Column.bind(196) | Binding column: Ejb3Column{table=org.hibernate.mapping.Table(DOCUMENT), mappingColumn=DOCUMENT_VERSION, insertable=true, updatable=true, unique=false}
+TRACE [main] AnnotationBinder.processElementAnnotations(1516) | version is a version property
+DEBUG [main] PropertyBinder.makePropertyAndValue(176) | MetadataSourceProcessor property version with lazy=false
+DEBUG [main] SimpleValueBinder.make(304) | building SimpleValue for version
+DEBUG [main] PropertyBinder.makeProperty(256) | Building property version
+TRACE [main] PropertyBinder.makeProperty(312) | Cascading version with null
+TRACE [main] AnnotationBinder.processElementAnnotations(1542) | Version name: version, unsavedValue: undefined
+DEBUG [main] SimpleValueBinder.fillSimpleValue(342) | Setting SimpleValue typeName for id
+DEBUG [main] SimpleValueBinder.fillSimpleValue(342) | Setting SimpleValue typeName for content
+DEBUG [main] SimpleValueBinder.fillSimpleValue(342) | Setting SimpleValue typeName for title
+DEBUG [main] SimpleValueBinder.fillSimpleValue(342) | Setting SimpleValue typeName for version
+DEBUG [main] Configuration.processFkSecondPassInOrder(1403) | Processing fk mappings (*ToOne and JoinedSubclass)
+DEBUG [main] Configuration.originalSecondPassCompile(1579) | Processing extends queue
+DEBUG [main] Configuration.processExtendsQueue(1633) | Processing extends queue
+DEBUG [main] Configuration.originalSecondPassCompile(1582) | Processing collection mappings
+DEBUG [main] Configuration.originalSecondPassCompile(1592) | Processing native query and ResultSetMapping mappings
+DEBUG [main] Configuration.originalSecondPassCompile(1600) | Processing association property references
+DEBUG [main] Configuration.originalSecondPassCompile(1622) | Processing foreign key constraints
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.engine.jdbc.spi.JdbcServices]
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.service.jdbc.connections.spi.ConnectionProvider]
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.service.jndi.spi.JndiService]
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.service.jdbc.dialect.spi.DialectFactory]
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.service.jdbc.dialect.spi.DialectResolver]
+DEBUG [main] JdbcServicesImpl.configure(121) | Database -&gt;
+       name : Oracle
+    version : Oracle Database 10g Enterprise Edition Release 10.2.0.4.0 - Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+      major : 10
+      minor : 2
+DEBUG [main] JdbcServicesImpl.configure(127) | Driver -&gt;
+       name : Oracle JDBC driver
+    version : 11.2.0.3.0
+      major : 11
+      minor : 2
+DEBUG [main] JdbcServicesImpl.configure(133) | JDBC version : 11.2
+INFO [main] Dialect.&lt;init&gt;(122) | HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+WARN [main] Oracle9Dialect.&lt;init&gt;(60) | HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+WARN [main] OracleDialect.&lt;init&gt;(48) | HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.service.jta.platform.spi.JtaPlatform]
+DEBUG [main] SettingsFactory.buildSettings(100) | Automatic flush during beforeCompletion(): disabled
+DEBUG [main] SettingsFactory.buildSettings(106) | Automatic session close at end of transaction: disabled
+DEBUG [main] SettingsFactory.buildSettings(133) | Scrollable result sets: enabled
+DEBUG [main] SettingsFactory.buildSettings(139) | Wrap result sets: disabled
+DEBUG [main] SettingsFactory.buildSettings(145) | JDBC3 getGeneratedKeys(): disabled
+DEBUG [main] SettingsFactory.buildSettings(157) | Connection release mode: auto
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.engine.transaction.spi.TransactionFactory]
+INFO [main] TransactionFactoryInitiator.initiateService(68) | HHH000399: Using default transaction strategy (direct JDBC transactions)
+DEBUG [main] SettingsFactory.buildSettings(194) | Default batch fetch size: 1
+DEBUG [main] SettingsFactory.buildSettings(200) | Generate SQL with comments: disabled
+DEBUG [main] SettingsFactory.buildSettings(206) | Order SQL updates by primary key: disabled
+DEBUG [main] SettingsFactory.buildSettings(212) | Order SQL inserts for batching: disabled
+DEBUG [main] SettingsFactory.createQueryTranslatorFactory(443) | Query translator: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory
+INFO [main] ASTQueryTranslatorFactory.&lt;init&gt;(48) | HHH000397: Using ASTQueryTranslatorFactory
+DEBUG [main] SettingsFactory.buildSettings(222) | Query language substitutions: {}
+DEBUG [main] SettingsFactory.buildSettings(228) | JPA-QL strict compliance: disabled
+DEBUG [main] SettingsFactory.buildSettings(236) | Second-level cache: enabled
+DEBUG [main] SettingsFactory.buildSettings(242) | Query cache: disabled
+DEBUG [main] SettingsFactory.createRegionFactory(383) | Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+DEBUG [main] SettingsFactory.createRegionFactory(393) | org.hibernate.cache.internal.NoCachingRegionFactory did not provide constructor accepting java.util.Properties; attempting no-arg constructor.
+DEBUG [main] SettingsFactory.buildSettings(257) | Optimize cache for minimal puts: disabled
+DEBUG [main] SettingsFactory.buildSettings(272) | Structured second-level cache entries: disabled
+DEBUG [main] SettingsFactory.buildSettings(281) | Statistics: disabled
+DEBUG [main] SettingsFactory.buildSettings(287) | Deleted entity synthetic identifier rollback: disabled
+DEBUG [main] SettingsFactory.buildSettings(311) | Default entity-mode: pojo
+DEBUG [main] SettingsFactory.buildSettings(317) | Named query checking : enabled
+DEBUG [main] SettingsFactory.buildSettings(323) | Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+DEBUG [main] SettingsFactory.buildSettings(329) | multi-tenancy strategy : NONE
+DEBUG [main] SessionFactoryImpl.&lt;init&gt;(225) | Building session factory
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.service.spi.SessionFactoryServiceRegistryFactory]
+TRACE [main] TypeFactory.injectSessionFactory(72) | Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@5a388c74
+DEBUG [main] SessionFactoryImpl.&lt;init&gt;(275) | Session factory constructed with filter configurations : {}
+DEBUG [main] SessionFactoryImpl.&lt;init&gt;(276) | Instantiating session factory with properties: {java.runtime.name=Java(TM) SE Runtime Environment, sun.boot.library.path=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries, java.vm.version=20.4-b02-402, awt.nativeDoubleBuffering=true, gopherProxySet=false, mrj.build=11D50b, java.vm.vendor=Apple Inc., java.vendor.url=http://www.apple.com/, path.separator=:, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.country=IT, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=unknown, java.vm.specification.name=Java Virtual Machine Specification, user.dir=/Users/paoloyx/Progetti/workspace_indigo/blobcrud, java.runtime.version=1.6.0_29-b11-402-11D50b, java.awt.graphicsenv=apple.awt.CGraphicsEnvironment, basedir=/Users/paoloyx/Progetti/workspace_indigo/blobcrud, hibernate.current_session_context_class=org.springframework.orm.hibernate4.SpringSessionContext, java.endorsed.dirs=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed, os.arch=x86_64, surefire.real.class.path=/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/surefire/surefirebooter2086007329435421833.jar, java.io.tmpdir=/var/folders/qd/dwkf0b9n6_n177kjfbcp0p2m0000gn/T/, line.separator=
+, java.vm.specification.vendor=Sun Microsystems Inc., os.name=Mac OS X, sun.jnu.encoding=MacRoman, java.library.path=.:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java, hibernate.connection.datasource=org.apache.commons.dbcp.BasicDataSource@3341b736, surefire.test.class.path=/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes:/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes:/Users/paoloyx/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/paoloyx/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-core/3.1.0.RELEASE/spring-core-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-asm/3.1.0.RELEASE/spring-asm-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/paoloyx/.m2/repository/org/hibernate/hibernate-core/4.1.0.Final/hibernate-core-4.1.0.Final.jar:/Users/paoloyx/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/paoloyx/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/paoloyx/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar:/Users/paoloyx/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/Users/paoloyx/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/Users/paoloyx/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar:/Users/paoloyx/.m2/repository/org/jboss/logging/jboss-logging/3.1.0.CR2/jboss-logging-3.1.0.CR2.jar:/Users/paoloyx/.m2/repository/org/javassist/javassist/3.15.0-GA/javassist-3.15.0-GA.jar:/Users/paoloyx/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.1.Final/hibernate-commons-annotations-4.0.1.Final.jar:/Users/paoloyx/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/Users/paoloyx/.m2/repository/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar:/Users/paoloyx/.m2/repository/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-test/3.1.0.RELEASE/spring-test-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-tx/3.1.0.RELEASE/spring-tx-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-aop/3.1.0.RELEASE/spring-aop-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-beans/3.1.0.RELEASE/spring-beans-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-context/3.1.0.RELEASE/spring-context-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-expression/3.1.0.RELEASE/spring-expression-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-orm/3.1.0.RELEASE/spring-orm-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-jdbc/3.1.0.RELEASE/spring-jdbc-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/postgresql/postgresql/9.1-901.jdbc4/postgresql-9.1-901.jdbc4.jar:/Users/paoloyx/Progetti/workspace_indigo/blobcrud/ext_libs/ojdbc6.jar:/Users/paoloyx/.m2/repository/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar:/Users/paoloyx/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar:/Users/paoloyx/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/Users/paoloyx/.m2/repository/commons-io/commons-io/2.1/commons-io-2.1.jar:, java.specification.name=Java Platform API Specification, java.class.version=50.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=10.7.3, http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, user.home=/Users/paoloyx, user.timezone=Europe/Rome, java.awt.printerjob=apple.awt.CPrinterJob, java.specification.version=1.6, file.encoding=MacRoman, user.name=paoloyx, java.class.path=/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/test-classes:/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/classes:/Users/paoloyx/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/paoloyx/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-core/3.1.0.RELEASE/spring-core-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-asm/3.1.0.RELEASE/spring-asm-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/paoloyx/.m2/repository/org/hibernate/hibernate-core/4.1.0.Final/hibernate-core-4.1.0.Final.jar:/Users/paoloyx/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/paoloyx/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/paoloyx/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar:/Users/paoloyx/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/Users/paoloyx/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/Users/paoloyx/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar:/Users/paoloyx/.m2/repository/org/jboss/logging/jboss-logging/3.1.0.CR2/jboss-logging-3.1.0.CR2.jar:/Users/paoloyx/.m2/repository/org/javassist/javassist/3.15.0-GA/javassist-3.15.0-GA.jar:/Users/paoloyx/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.1.Final/hibernate-commons-annotations-4.0.1.Final.jar:/Users/paoloyx/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/Users/paoloyx/.m2/repository/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar:/Users/paoloyx/.m2/repository/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-test/3.1.0.RELEASE/spring-test-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-tx/3.1.0.RELEASE/spring-tx-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-aop/3.1.0.RELEASE/spring-aop-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-beans/3.1.0.RELEASE/spring-beans-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-context/3.1.0.RELEASE/spring-context-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-expression/3.1.0.RELEASE/spring-expression-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-orm/3.1.0.RELEASE/spring-orm-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/org/springframework/spring-jdbc/3.1.0.RELEASE/spring-jdbc-3.1.0.RELEASE.jar:/Users/paoloyx/.m2/repository/postgresql/postgresql/9.1-901.jdbc4/postgresql-9.1-901.jdbc4.jar:/Users/paoloyx/Progetti/workspace_indigo/blobcrud/ext_libs/ojdbc6.jar:/Users/paoloyx/.m2/repository/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar:/Users/paoloyx/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar:/Users/paoloyx/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/Users/paoloyx/.m2/repository/commons-io/commons-io/2.1/commons-io-2.1.jar:, hibernate.bytecode.use_reflection_optimizer=false, hibernate.classLoader.application=sun.misc.Launcher$AppClassLoader@20cf2c80, java.vm.specification.version=1.0, sun.arch.data.model=64, java.home=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home, sun.java.command=/Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/surefire/surefirebooter2086007329435421833.jar /Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/surefire/surefire4928042026723574440tmp /Users/paoloyx/Progetti/workspace_indigo/blobcrud/target/surefire/surefire6831103914888614504tmp, hibernate.dialect=org.hibernate.dialect.OracleDialect, java.specification.vendor=Sun Microsystems Inc., user.language=it, awt.toolkit=apple.awt.CToolkit, java.vm.info=mixed mode, java.version=1.6.0_29, hibernate.jdbc.use_streams_for_binary=true, java.ext.dirs=/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext, sun.boot.class.path=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar, java.vendor=Apple Inc., hibernate.jdbc.batch_size=0, localRepository=/Users/paoloyx/.m2/repository, file.separator=/, java.vendor.url.bug=http://bugreport.apple.com/, hibernate.hbm2ddl.auto=create, sun.cpu.endian=little, sun.io.unicode.encoding=UnicodeLittle, mrj.version=1070.1.6.0_29-402, socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16, ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, sun.cpu.isalist=}
+DEBUG [main] DefaultIdentifierGeneratorFactory.setDialect(107) | Setting dialect [org.hibernate.dialect.OracleDialect]
+TRACE [main] OptimizerFactory.&lt;init&gt;(384) | Creating hilo optimizer (legacy) with [incrementSize=32.767; returnClass=java.lang.Long]
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.persister.spi.PersisterFactory]
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.persister.spi.PersisterClassResolver]
+TRACE [main] AbstractPropertyMapping.addPropertyPath(143) | Skipping duplicate registration of path [content], existing type = [org.hibernate.type.CustomType@5d4fa79d], incoming type = [org.hibernate.type.CustomType@5d4fa79d]
+TRACE [main] AbstractPropertyMapping.addPropertyPath(143) | Skipping duplicate registration of path [title], existing type = [org.hibernate.type.StringType@5029d294], incoming type = [org.hibernate.type.StringType@5029d294]
+TRACE [main] AbstractPropertyMapping.addPropertyPath(143) | Skipping duplicate registration of path [version], existing type = [org.hibernate.type.IntegerType@1c67c1a6], incoming type = [org.hibernate.type.IntegerType@1c67c1a6]
+TRACE [main] AbstractPropertyMapping.addPropertyPath(143) | Skipping duplicate registration of path [id], existing type = [org.hibernate.type.LongType@197ebe66], incoming type = [org.hibernate.type.LongType@197ebe66]
+DEBUG [main] AbstractEntityPersister.logStaticSQL(3380) | Static SQL for entity: it.paoloyx.blobcrud.model.Document
+DEBUG [main] AbstractEntityPersister.logStaticSQL(3382) |  Version select: select DOCUMENT_VERSION from DOCUMENT where DOCUMENT_ID =?
+DEBUG [main] AbstractEntityPersister.logStaticSQL(3383) |  Snapshot select: select document_.DOCUMENT_ID, document_.DOCUMENT_CONTENT as DOCUMENT2_0_, document_.DOCUMENT_TITLE as DOCUMENT3_0_, document_.DOCUMENT_VERSION as DOCUMENT4_0_ from DOCUMENT document_ where document_.DOCUMENT_ID=?
+DEBUG [main] AbstractEntityPersister.logStaticSQL(3385) |  Insert 0: insert into DOCUMENT (DOCUMENT_CONTENT, DOCUMENT_TITLE, DOCUMENT_VERSION, DOCUMENT_ID) values (?, ?, ?, ?)
+DEBUG [main] AbstractEntityPersister.logStaticSQL(3386) |  Update 0: update DOCUMENT set DOCUMENT_CONTENT=?, DOCUMENT_TITLE=?, DOCUMENT_VERSION=? where DOCUMENT_ID=? and DOCUMENT_VERSION=?
+DEBUG [main] AbstractEntityPersister.logStaticSQL(3387) |  Delete 0: delete from DOCUMENT where DOCUMENT_ID=? and DOCUMENT_VERSION=?
+DEBUG [main] Loader.&lt;init&gt;(123) | Static select for entity it.paoloyx.blobcrud.model.Document [NONE]: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=?
+DEBUG [main] Loader.&lt;init&gt;(123) | Static select for entity it.paoloyx.blobcrud.model.Document [READ]: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=?
+DEBUG [main] Loader.&lt;init&gt;(123) | Static select for entity it.paoloyx.blobcrud.model.Document [UPGRADE]: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=? for update
+DEBUG [main] Loader.&lt;init&gt;(123) | Static select for entity it.paoloyx.blobcrud.model.Document [UPGRADE_NOWAIT]: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=? for update nowait
+DEBUG [main] Loader.&lt;init&gt;(123) | Static select for entity it.paoloyx.blobcrud.model.Document [FORCE]: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=? for update nowait
+DEBUG [main] Loader.&lt;init&gt;(123) | Static select for entity it.paoloyx.blobcrud.model.Document [PESSIMISTIC_READ]: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=? for update
+DEBUG [main] Loader.&lt;init&gt;(123) | Static select for entity it.paoloyx.blobcrud.model.Document [PESSIMISTIC_WRITE]: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=? for update
+DEBUG [main] Loader.&lt;init&gt;(123) | Static select for entity it.paoloyx.blobcrud.model.Document [PESSIMISTIC_FORCE_INCREMENT]: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=? for update nowait
+DEBUG [main] Loader.&lt;init&gt;(123) | Static select for entity it.paoloyx.blobcrud.model.Document [OPTIMISTIC]: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=?
+DEBUG [main] Loader.&lt;init&gt;(123) | Static select for entity it.paoloyx.blobcrud.model.Document [OPTIMISTIC_FORCE_INCREMENT]: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=?
+DEBUG [main] Loader.&lt;init&gt;(56) | Static select for action ACTION_MERGE on entity it.paoloyx.blobcrud.model.Document: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=?
+DEBUG [main] Loader.&lt;init&gt;(56) | Static select for action ACTION_REFRESH on entity it.paoloyx.blobcrud.model.Document: select document0_.DOCUMENT_ID as DOCUMENT1_0_0_, document0_.DOCUMENT_CONTENT as DOCUMENT2_0_0_, document0_.DOCUMENT_TITLE as DOCUMENT3_0_0_, document0_.DOCUMENT_VERSION as DOCUMENT4_0_0_ from DOCUMENT document0_ where document0_.DOCUMENT_ID=?
+DEBUG [main] SessionFactoryRegistry.&lt;init&gt;(62) | Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@6434d75f
+DEBUG [main] SessionFactoryRegistry.addSessionFactory(75) | Registering SessionFactory: 0f5f7e92-eab3-4476-924e-7c9f8d63274f (&lt;unnamed&gt;)
+DEBUG [main] SessionFactoryRegistry.addSessionFactory(82) | Not binding SessionFactory to JNDI, no JNDI name configured
+DEBUG [main] SessionFactoryImpl.&lt;init&gt;(472) | Instantiated session factory
+TRACE [main] Configuration.secondPassCompile(1307) | Starting secondPassCompile() processing
+DEBUG [main] Configuration.processHbmXmlQueue(3391) | Processing hbm.xml files
+DEBUG [main] Configuration.processAnnotatedClassesQueue(3421) | Process annotated classes
+DEBUG [main] Configuration.processFkSecondPassInOrder(1403) | Processing fk mappings (*ToOne and JoinedSubclass)
+DEBUG [main] Configuration.originalSecondPassCompile(1579) | Processing extends queue
+DEBUG [main] Configuration.processExtendsQueue(1633) | Processing extends queue
+DEBUG [main] Configuration.originalSecondPassCompile(1582) | Processing collection mappings
+DEBUG [main] Configuration.originalSecondPassCompile(1592) | Processing native query and ResultSetMapping mappings
+DEBUG [main] Configuration.originalSecondPassCompile(1600) | Processing association property references
+DEBUG [main] Configuration.originalSecondPassCompile(1622) | Processing foreign key constraints
+DEBUG [main] DefaultIdentifierGeneratorFactory.setDialect(107) | Setting dialect [org.hibernate.dialect.OracleDialect]
+TRACE [main] OptimizerFactory.&lt;init&gt;(384) | Creating hilo optimizer (legacy) with [incrementSize=32.767; returnClass=java.lang.Long]
+TRACE [main] Configuration.secondPassCompile(1307) | Starting secondPassCompile() processing
+DEBUG [main] Configuration.processHbmXmlQueue(3391) | Processing hbm.xml files
+DEBUG [main] Configuration.processAnnotatedClassesQueue(3421) | Process annotated classes
+DEBUG [main] Configuration.processFkSecondPassInOrder(1403) | Processing fk mappings (*ToOne and JoinedSubclass)
+DEBUG [main] Configuration.originalSecondPassCompile(1579) | Processing extends queue
+DEBUG [main] Configuration.processExtendsQueue(1633) | Processing extends queue
+DEBUG [main] Configuration.originalSecondPassCompile(1582) | Processing collection mappings
+DEBUG [main] Configuration.originalSecondPassCompile(1592) | Processing native query and ResultSetMapping mappings
+DEBUG [main] Configuration.originalSecondPassCompile(1600) | Processing association property references
+DEBUG [main] Configuration.originalSecondPassCompile(1622) | Processing foreign key constraints
+DEBUG [main] DefaultIdentifierGeneratorFactory.setDialect(107) | Setting dialect [org.hibernate.dialect.OracleDialect]
+DEBUG [main] DefaultIdentifierGeneratorFactory.setDialect(107) | Setting dialect [org.hibernate.dialect.OracleDialect]
+TRACE [main] OptimizerFactory.&lt;init&gt;(384) | Creating hilo optimizer (legacy) with [incrementSize=32.767; returnClass=java.lang.Long]
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.tool.hbm2ddl.ImportSqlCommandExtractor]
+INFO [main] SchemaExport.execute(344) | HHH000227: Running hbm2ddl schema export
+DEBUG [main] SchemaExport.execute(354) | Import file not found: /import.sql
+DEBUG [main] SQL.logStatement(104) | drop table DOCUMENT cascade constraints
+DEBUG [main] SQL.logStatement(104) | drop table hibernate_sequences cascade constraints
+DEBUG [main] SQL.logStatement(104) | create table DOCUMENT (DOCUMENT_ID number(19,0) not null, DOCUMENT_CONTENT blob, DOCUMENT_TITLE varchar2(255), DOCUMENT_VERSION number(10,0), primary key (DOCUMENT_ID))
+DEBUG [main] SQL.logStatement(104) | create table hibernate_sequences ( sequence_name varchar2(255),  sequence_next_hi_value number(10,0) ) 
+INFO [main] SchemaExport.execute(406) | HHH000230: Schema export complete
+DEBUG [main] SessionFactoryImpl.checkNamedQueries(1104) | Checking 0 named HQL queries
+DEBUG [main] SessionFactoryImpl.checkNamedQueries(1125) | Checking 0 named SQL queries
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.stat.spi.StatisticsImplementor]
+DEBUG [main] StatisticsInitiator.initiateServiceInternal(110) | Statistics initialized [enabled=false]
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;sessionFactory&apos;
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] AutowiredAnnotationBeanPostProcessor.registerDependentBeans(424) | Autowiring by type from bean name &apos;it.paoloyx.blobcrud.test.integration.DocumentManagerTest&apos; to bean named &apos;sessionFactory&apos;
+DEBUG [main] InjectionMetadata.inject(85) | Processing injected method of bean &apos;it.paoloyx.blobcrud.test.integration.DocumentManagerTest&apos;: AutowiredFieldElement for private it.paoloyx.blobcrud.repository.DocumentDAO it.paoloyx.blobcrud.test.integration.DocumentManagerTest.documentDao
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;documentDao&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;documentDao&apos;
+DEBUG [main] InjectionMetadata.&lt;init&gt;(60) | Found injected element on class [it.paoloyx.blobcrud.repository.hibernate.DocumentDAOHibernate]: AutowiredFieldElement for private org.hibernate.SessionFactory it.paoloyx.blobcrud.repository.hibernate.DocumentDAOHibernate.sessionFactory
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;documentDao&apos; to allow for resolving potential circular references
+DEBUG [main] InjectionMetadata.inject(85) | Processing injected method of bean &apos;documentDao&apos;: AutowiredFieldElement for private org.hibernate.SessionFactory it.paoloyx.blobcrud.repository.hibernate.DocumentDAOHibernate.sessionFactory
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;sessionFactory&apos;
+DEBUG [main] AutowiredAnnotationBeanPostProcessor.registerDependentBeans(424) | Autowiring by type from bean name &apos;documentDao&apos; to bean named &apos;sessionFactory&apos;
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;documentDao&apos;
+DEBUG [main] AutowiredAnnotationBeanPostProcessor.registerDependentBeans(424) | Autowiring by type from bean name &apos;it.paoloyx.blobcrud.test.integration.DocumentManagerTest&apos; to bean named &apos;documentDao&apos;
+DEBUG [main] InjectionMetadata.inject(85) | Processing injected method of bean &apos;it.paoloyx.blobcrud.test.integration.DocumentManagerTest&apos;: AutowiredFieldElement for private it.paoloyx.blobcrud.provider.FileProvider it.paoloyx.blobcrud.test.integration.DocumentManagerTest.fileProvider
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;fileProvider&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;fileProvider&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;fileProvider&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;fileProvider&apos;
+DEBUG [main] AutowiredAnnotationBeanPostProcessor.registerDependentBeans(424) | Autowiring by type from bean name &apos;it.paoloyx.blobcrud.test.integration.DocumentManagerTest&apos; to bean named &apos;fileProvider&apos;
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] AnnotationTransactionAttributeSource.getTransactionAttribute(106) | Adding transactional method &apos;testInsertDocument&apos; with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; &apos;&apos;
+DEBUG [main] InfrastructureAdvisorAutoProxyCreator.buildAdvisors(537) | Creating implicit proxy for bean &apos;it.paoloyx.blobcrud.test.integration.DocumentManagerTest&apos; with 0 common interceptors and 1 specific interceptors
+DEBUG [main] Cglib2AopProxy.getProxy(151) | Creating CGLIB2 proxy: target source is SingletonTargetSource for target object [it.paoloyx.blobcrud.test.integration.DocumentManagerTest@250d593e]
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.transaction.interceptor.TransactionInterceptor#0&apos;
+DEBUG [main] Cglib2AopProxy.accept(799) | Unable to apply any optimisations to advised method: public void it.paoloyx.blobcrud.test.integration.DocumentManagerTest.testInsertDocument()
+DEBUG [main] Cglib2AopProxy.accept(750) | Found finalize() method - using NO_OVERRIDE
+DEBUG [main] Cglib2AopProxy.accept(762) | Found &apos;equals&apos; method: public boolean java.lang.Object.equals(java.lang.Object)
+DEBUG [main] Cglib2AopProxy.accept(799) | Unable to apply any optimisations to advised method: public java.lang.String java.lang.Object.toString()
+DEBUG [main] Cglib2AopProxy.accept(767) | Found &apos;hashCode&apos; method: public native int java.lang.Object.hashCode()
+DEBUG [main] Cglib2AopProxy.accept(799) | Unable to apply any optimisations to advised method: protected native java.lang.Object java.lang.Object.clone() throws java.lang.CloneNotSupportedException
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract int org.springframework.aop.framework.Advised.indexOf(org.aopalliance.aop.Advice)
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract int org.springframework.aop.framework.Advised.indexOf(org.springframework.aop.Advisor)
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract boolean org.springframework.aop.framework.Advised.isFrozen()
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract org.springframework.aop.TargetSource org.springframework.aop.framework.Advised.getTargetSource()
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract void org.springframework.aop.framework.Advised.addAdvisor(org.springframework.aop.Advisor) throws org.springframework.aop.framework.AopConfigException
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract void org.springframework.aop.framework.Advised.addAdvisor(int,org.springframework.aop.Advisor) throws org.springframework.aop.framework.AopConfigException
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract void org.springframework.aop.framework.Advised.setTargetSource(org.springframework.aop.TargetSource)
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract void org.springframework.aop.framework.Advised.setPreFiltered(boolean)
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract boolean org.springframework.aop.framework.Advised.isProxyTargetClass()
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract void org.springframework.aop.framework.Advised.setExposeProxy(boolean)
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract boolean org.springframework.aop.framework.Advised.isExposeProxy()
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract void org.springframework.aop.framework.Advised.addAdvice(org.aopalliance.aop.Advice) throws org.springframework.aop.framework.AopConfigException
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract void org.springframework.aop.framework.Advised.addAdvice(int,org.aopalliance.aop.Advice) throws org.springframework.aop.framework.AopConfigException
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract boolean org.springframework.aop.framework.Advised.isPreFiltered()
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract java.lang.Class[] org.springframework.aop.framework.Advised.getProxiedInterfaces()
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract boolean org.springframework.aop.framework.Advised.isInterfaceProxied(java.lang.Class)
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract org.springframework.aop.Advisor[] org.springframework.aop.framework.Advised.getAdvisors()
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract void org.springframework.aop.framework.Advised.removeAdvisor(int) throws org.springframework.aop.framework.AopConfigException
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract boolean org.springframework.aop.framework.Advised.removeAdvisor(org.springframework.aop.Advisor)
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract boolean org.springframework.aop.framework.Advised.replaceAdvisor(org.springframework.aop.Advisor,org.springframework.aop.Advisor) throws org.springframework.aop.framework.AopConfigException
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract boolean org.springframework.aop.framework.Advised.removeAdvice(org.aopalliance.aop.Advice)
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract java.lang.String org.springframework.aop.framework.Advised.toProxyConfigString()
+DEBUG [main] Cglib2AopProxy.accept(756) | Method is declared on Advised interface: public abstract java.lang.Class org.springframework.aop.TargetClassAware.getTargetClass()
+DEBUG [main] AnnotationTransactionAttributeSource.getTransactionAttribute(106) | Adding transactional method &apos;testInsertDocument&apos; with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; &apos;&apos;
+DEBUG [main] TransactionalTestExecutionListener.beforeTestMethod(147) | Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT; &apos;&apos;] found for test context [[TestContext@16ba5c7a testClass = DocumentManagerTest, testInstance = it.paoloyx.blobcrud.test.integration.DocumentManagerTest@250d593e, testMethod = testInsertDocument@DocumentManagerTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@f5e0873 testClass = DocumentManagerTest, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, activeProfiles = &apos;{}&apos;, contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;]]]
+DEBUG [main] TransactionalTestExecutionListener.retrieveConfigurationAttributes(468) | Retrieved @TransactionConfiguration [null] for test class [class it.paoloyx.blobcrud.test.integration.DocumentManagerTest]
+DEBUG [main] TransactionalTestExecutionListener.retrieveConfigurationAttributes(485) | Retrieved TransactionConfigurationAttributes [[TransactionConfigurationAttributes@55d4ee7e transactionManagerName = &apos;transactionManager&apos;, defaultRollback = true]] for class [class it.paoloyx.blobcrud.test.integration.DocumentManagerTest]
+DEBUG [main] TestContext.getApplicationContext(162) | Retrieved ApplicationContext for test class [class it.paoloyx.blobcrud.test.integration.DocumentManagerTest] from cache with key [[MergedContextConfiguration@f5e0873 testClass = DocumentManagerTest, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, activeProfiles = &apos;{}&apos;, contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;]].
+DEBUG [main] DefaultListableBeanFactory.getSingleton(217) | Creating shared instance of singleton bean &apos;transactionManager&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(430) | Creating instance of bean &apos;transactionManager&apos;
+DEBUG [main] DefaultListableBeanFactory.doCreateBean(504) | Eagerly caching bean &apos;transactionManager&apos; to allow for resolving potential circular references
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;sessionFactory&apos;
+DEBUG [main] DefaultListableBeanFactory.invokeInitMethods(1498) | Invoking afterPropertiesSet() on bean with name &apos;transactionManager&apos;
+INFO [main] HibernateTransactionManager.afterPropertiesSet(268) | Using DataSource [org.apache.commons.dbcp.BasicDataSource@3341b736] of Hibernate SessionFactory for HibernateTransactionManager
+DEBUG [main] DefaultListableBeanFactory.doGetBean(245) | Returning cached instance of singleton bean &apos;org.springframework.transaction.config.internalTransactionAdvisor&apos;
+DEBUG [main] DefaultListableBeanFactory.createBean(458) | Finished creating instance of bean &apos;transactionManager&apos;
+DEBUG [main] HibernateTransactionManager.getTransaction(365) | Creating new transaction with name [testInsertDocument]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; &apos;&apos;
+DEBUG [main] SessionImpl.&lt;init&gt;(253) | Opened session at timestamp: 13297331071
+DEBUG [main] HibernateTransactionManager.doBegin(342) | Opened new Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=[] updates=[] deletions=[] collectionCreations=[] collectionRemovals=[] collectionUpdates=[] unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])] for Hibernate transaction
+DEBUG [main] HibernateTransactionManager.doBegin(352) | Preparing JDBC Connection of Hibernate Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=[] updates=[] deletions=[] collectionCreations=[] collectionRemovals=[] collectionUpdates=[] unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])]
+DEBUG [main] AbstractTransactionImpl.begin(158) | begin
+DEBUG [main] LogicalConnectionImpl.obtainConnection(295) | Obtaining JDBC connection
+DEBUG [main] LogicalConnectionImpl.obtainConnection(301) | Obtained JDBC connection
+DEBUG [main] JdbcTransaction.doBegin(69) | initial autocommit status: true
+DEBUG [main] JdbcTransaction.doBegin(71) | disabling autocommit
+DEBUG [main] HibernateTransactionManager.doBegin(413) | Exposing Hibernate transaction as JDBC transaction [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler@6bc0cd80[valid=true]]
+DEBUG [main] TransactionalTestExecutionListener.isRollback(356) | No method-level @Rollback override: using default rollback [true] for test context [[TestContext@16ba5c7a testClass = DocumentManagerTest, testInstance = it.paoloyx.blobcrud.test.integration.DocumentManagerTest@250d593e, testMethod = testInsertDocument@DocumentManagerTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@f5e0873 testClass = DocumentManagerTest, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, activeProfiles = &apos;{}&apos;, contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;]]]
+INFO [main] TransactionalTestExecutionListener.startNewTransaction(274) | Began transaction (1): transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@72e28a61]; rollback [true]
+TRACE [main] ConnectionProxyHandler.continueInvocation(110) | Handling invocation of connection method [createBlob]
+TRACE [main] LogicalConnectionImpl.afterStatementExecution(234) | Starting after statement execution processing [ON_CLOSE]
+TRACE [main] ConnectionProxyHandler.continueInvocation(110) | Handling invocation of connection method [isClosed]
+TRACE [main] ConnectionProxyHandler.continueInvocation(110) | Handling invocation of connection method [close]
+TRACE [main] ConnectionProxyHandler.invalidateHandle(206) | Invalidating connection handle
+INFO [main] DocumentManagerTest.testInsertDocument(53) | Created blob from file: /Users/paoloyx/Desktop/alfresco-community-4.0.d-installer-osx.app.tar.gz
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.event.service.spi.EventListenerRegistry]
+TRACE [main] AbstractSaveEventListener.getEntityState(497) | Transient instance of: it.paoloyx.blobcrud.model.Document
+TRACE [main] DefaultSaveOrUpdateEventListener.entityIsTransient(175) | Saving transient instance
+DEBUG [main] SQL.logStatement(104) | select sequence_next_hi_value from hibernate_sequences where sequence_name = &apos;DOCUMENT&apos; for update
+DEBUG [main] SQL.logStatement(104) | insert into hibernate_sequences(sequence_name, sequence_next_hi_value) values(&apos;DOCUMENT&apos;, ?)
+DEBUG [main] SQL.logStatement(104) | update hibernate_sequences set sequence_next_hi_value = ? where sequence_next_hi_value = ? and sequence_name = &apos;DOCUMENT&apos;
+DEBUG [main] AbstractSaveEventListener.saveWithGeneratedId(131) | Generated identifier: 1, using strategy: org.hibernate.id.MultipleHiLoPerTableGenerator
+TRACE [main] AbstractSaveEventListener.performSave(168) | Saving [it.paoloyx.blobcrud.model.Document#1]
+TRACE [main] Versioning.seed(82) | Seeding: 0
+TRACE [main] ActionQueue.addAction(135) | Adding an EntityInsertAction for [it.paoloyx.blobcrud.model.Document] object
+TRACE [main] ActionQueue.addInsertAction(182) | Adding insert with no non-nullable, transient entities: [EntityInsertAction[it.paoloyx.blobcrud.model.Document#1]]
+TRACE [main] ActionQueue.addResolvedEntityInsertAction(206) | Adding resolved non-early insert action.
+TRACE [main] UnresolvedEntityInsertActions.resolveDependentActions(212) | No unresolved entity inserts that depended on [[it.paoloyx.blobcrud.model.Document#1]]
+TRACE [main] UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(121) | No entity insert actions have non-nullable, transient entity dependencies.
+TRACE [main] AbstractFlushingEventListener.flushEverythingToExecutions(81) | Flushing session
+DEBUG [main] AbstractFlushingEventListener.prepareEntityFlushes(143) | Processing flush-time cascades
+DEBUG [main] AbstractFlushingEventListener.prepareCollectionFlushes(183) | Dirty checking collections
+TRACE [main] AbstractFlushingEventListener.flushEntities(198) | Flushing entities and processing referenced collections
+TRACE [main] AbstractFlushingEventListener.flushCollections(239) | Processing unreferenced collections
+TRACE [main] AbstractFlushingEventListener.flushCollections(251) | Scheduling collection removes/(re)creates/updates
+DEBUG [main] AbstractFlushingEventListener.logFlushResults(117) | Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+DEBUG [main] AbstractFlushingEventListener.logFlushResults(124) | Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+DEBUG [main] EntityPrinter.toString(114) | Listing entities:
+DEBUG [main] EntityPrinter.toString(121) | it.paoloyx.blobcrud.model.Document{content=oracle.sql.BLOB@3f2f529b, id=1, title=null, version=0}
+TRACE [main] AbstractFlushingEventListener.performExecutions(314) | Executing flush
+TRACE [main] LogicalConnectionImpl.disableReleases(262) | Disabling releases
+TRACE [main] AbstractEntityPersister.insert(2812) | Inserting entity: [it.paoloyx.blobcrud.model.Document#1]
+TRACE [main] AbstractEntityPersister.insert(2814) | Version: 0
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.engine.jdbc.batch.spi.BatchBuilder]
+TRACE [main] AbstractServiceRegistryImpl.initializeService(146) | Initializing service [role=org.hibernate.service.jmx.spi.JmxService]
+TRACE [main] BatchBuilderImpl.buildBatch(68) | Building batch [size=0]
+TRACE [main] ConnectionProxyHandler.continueInvocation(110) | Handling invocation of connection method [prepareStatement]
+DEBUG [main] SQL.logStatement(104) | insert into DOCUMENT (DOCUMENT_CONTENT, DOCUMENT_TITLE, DOCUMENT_VERSION, DOCUMENT_ID) values (?, ?, ?, ?)
+TRACE [main] JdbcResourceRegistryImpl.register(64) | Registering statement [org.hibernate.engine.jdbc.internal.proxy.PreparedStatementProxyHandler@3484fdbc[valid=true]]
+TRACE [main] AbstractEntityPersister.dehydrate(2594) | Dehydrating entity: [it.paoloyx.blobcrud.model.Document#1]
+TRACE [main] AbstractStatementProxyHandler.continueInvocation(88) | Handling invocation of statement method [getConnection]
+TRACE [main] LogicalConnectionImpl.enableReleases(268) | (Re)enabling releases
+TRACE [main] LogicalConnectionImpl.afterStatementExecution(234) | Starting after statement execution processing [ON_CLOSE]
+DEBUG [main] TransactionalTestExecutionListener.isRollback(356) | No method-level @Rollback override: using default rollback [true] for test context [[TestContext@16ba5c7a testClass = DocumentManagerTest, testInstance = it.paoloyx.blobcrud.test.integration.DocumentManagerTest@250d593e, testMethod = testInsertDocument@DocumentManagerTest, testException = java.lang.ClassCastException: $Proxy19 cannot be cast to oracle.jdbc.OracleConnection, mergedContextConfiguration = [MergedContextConfiguration@f5e0873 testClass = DocumentManagerTest, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, activeProfiles = &apos;{}&apos;, contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;]]]
+DEBUG [main] HibernateTransactionManager.processRollback(843) | Initiating transaction rollback
+DEBUG [main] HibernateTransactionManager.doRollback(496) | Rolling back Hibernate transaction on Session [SessionImpl(PersistenceContext[entityKeys=[EntityKey[it.paoloyx.blobcrud.model.Document#1]],collectionKeys=[]];ActionQueue[insertions=[EntityInsertAction[it.paoloyx.blobcrud.model.Document#1]] updates=[] deletions=[] collectionCreations=[] collectionRemovals=[] collectionUpdates=[] unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])]
+DEBUG [main] AbstractTransactionImpl.rollback(203) | rolling back
+DEBUG [main] JdbcTransaction.doRollback(164) | rolled JDBC Connection
+DEBUG [main] JdbcTransaction.releaseManagedConnection(126) | re-enabling autocommit
+TRACE [main] TransactionCoordinatorImpl.afterTransaction(136) | after transaction completion
+TRACE [main] SessionImpl.afterTransactionCompletion(535) | after transaction completion
+TRACE [main] ConnectionProxyHandler.continueInvocation(110) | Handling invocation of connection method [isReadOnly]
+DEBUG [main] HibernateTransactionManager.doCleanupAfterCompletion(558) | Closing Hibernate Session [SessionImpl(PersistenceContext[entityKeys=[EntityKey[it.paoloyx.blobcrud.model.Document#1]],collectionKeys=[]];ActionQueue[insertions=[EntityInsertAction[it.paoloyx.blobcrud.model.Document#1]] updates=[] deletions=[] collectionCreations=[] collectionRemovals=[] collectionUpdates=[] unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])] after transaction
+TRACE [main] SessionImpl.close(274) | Closing session
+DEBUG [main] JdbcCoordinatorImpl.close(138) | HHH000420: Closing un-released batch
+INFO [main] AbstractBatchImpl.release(205) | HHH000010: On release of batch it still contained JDBC statements
+TRACE [main] AbstractStatementProxyHandler.continueInvocation(88) | Handling invocation of statement method [close]
+TRACE [main] JdbcResourceRegistryImpl.release(100) | Releasing statement [org.hibernate.engine.jdbc.internal.proxy.PreparedStatementProxyHandler@3484fdbc[valid=true]]
+TRACE [main] JdbcResourceRegistryImpl.close(252) | Closing prepared statement [org.hibernate.engine.jdbc.internal.proxy.PreparedStatementProxyHandler@3484fdbc[valid=true]]
+TRACE [main] AbstractStatementProxyHandler.continueInvocation(88) | Handling invocation of statement method [getWrappedObject]
+TRACE [main] JdbcResourceRegistryImpl.close(252) | Closing prepared statement [oracle.jdbc.driver.OraclePreparedStatementWrapper@3484fdbc]
+TRACE [main] AbstractStatementProxyHandler.continueInvocation(88) | Handling invocation of statement method [invalidate]
+TRACE [main] LogicalConnectionImpl.afterStatementExecution(234) | Starting after statement execution processing [ON_CLOSE]
+TRACE [main] LogicalConnectionImpl.close(193) | Closing logical connection
+TRACE [main] ConnectionProxyHandler.continueInvocation(110) | Handling invocation of connection method [close]
+TRACE [main] ConnectionProxyHandler.invalidateHandle(206) | Invalidating connection handle
+TRACE [main] JdbcResourceRegistryImpl.close(246) | Closing JDBC container [org.hibernate.engine.jdbc.internal.JdbcResourceRegistryImpl@7418e252]
+DEBUG [main] LogicalConnectionImpl.releaseConnection(314) | Releasing JDBC connection
+DEBUG [main] LogicalConnectionImpl.releaseConnection(332) | Released JDBC connection
+DEBUG [main] ConnectionProxyHandler.physicalConnectionReleased(219) | HHH000163: Logical connection releasing its physical connection
+DEBUG [main] ConnectionProxyHandler.physicalConnectionReleased(219) | HHH000163: Logical connection releasing its physical connection
+DEBUG [main] ConnectionProxyHandler.physicalConnectionReleased(219) | HHH000163: Logical connection releasing its physical connection
+DEBUG [main] ConnectionProxyHandler.physicalConnectionReleased(219) | HHH000163: Logical connection releasing its physical connection
+DEBUG [main] ConnectionProxyHandler.physicalConnectionReleased(219) | HHH000163: Logical connection releasing its physical connection
+TRACE [main] LogicalConnectionImpl.close(207) | Logical connection closed
+INFO [main] TransactionalTestExecutionListener.endTransaction(294) | Rolled back transaction after test execution for test context [[TestContext@16ba5c7a testClass = DocumentManagerTest, testInstance = it.paoloyx.blobcrud.test.integration.DocumentManagerTest@250d593e, testMethod = testInsertDocument@DocumentManagerTest, testException = java.lang.ClassCastException: $Proxy19 cannot be cast to oracle.jdbc.OracleConnection, mergedContextConfiguration = [MergedContextConfiguration@f5e0873 testClass = DocumentManagerTest, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, activeProfiles = &apos;{}&apos;, contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;]]]
+DEBUG [main] DirtiesContextTestExecutionListener.afterTestMethod(86) | After test method: context [[TestContext@16ba5c7a testClass = DocumentManagerTest, testInstance = it.paoloyx.blobcrud.test.integration.DocumentManagerTest@250d593e, testMethod = testInsertDocument@DocumentManagerTest, testException = java.lang.ClassCastException: $Proxy19 cannot be cast to oracle.jdbc.OracleConnection, mergedContextConfiguration = [MergedContextConfiguration@f5e0873 testClass = DocumentManagerTest, locations = &apos;{classpath*:META-INF/spring/applicationContext*.xml}&apos;, classes = &apos;{}&apos;, activeProfiles = &apos;{}&apos;, contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;]]], class dirties context [false], class mode [null], method dirties context [false].
+</system-out>
+  </testcase>
+</testsuite>

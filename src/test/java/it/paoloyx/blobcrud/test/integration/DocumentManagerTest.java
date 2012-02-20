@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Blob;
 
+import junit.framework.Assert;
+
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -57,10 +59,17 @@ public class DocumentManagerTest {
 				logger.warn("Warning: file " + fileProvider.getAbsolutePath() + " could not be found. Persisting null binary content");
 			}
 			// persist document
-			documentDao.saveOrUpdate(doc);
+			Document persistedDoc = documentDao.saveOrUpdate(doc);
 			
 			// flushing the session
 			this.sessionFactory.getCurrentSession().flush();
+			
+			// We clear Hibernate Session, then we retrieve the persisted document
+			this.sessionFactory.getCurrentSession().clear();
+			Document retrievedDoc = documentDao.findByPk(persistedDoc.getId());
+			
+			// Assertion
+			Assert.assertEquals(retrievedDoc.getId(), persistedDoc.getId());
 		}
 		finally {
 			try {

@@ -53,7 +53,9 @@ public class Document {
 		this.title = title;
 	}
 
-	@Lob
+    @org.hibernate.annotations.Type(
+          type = "it.paoloyx.blobcrud.usertypes.BlobUserType"
+      )	
     @Column(name = "DOCUMENT_CONTENT")
 	public Blob getContent() {
 		return content;
