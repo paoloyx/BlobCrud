@@ -7,62 +7,61 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import org.hibernate.annotations.Type;
+
 @Entity
-@Table(name="DOCUMENT")
+@Table(name = "DOCUMENT_BLOBCRUD")
 public class Document {
 
-	private Long id;
-	
-	private Integer version;
-	
-	private String title;
-	
-	private Blob content;
+    private Long id;
 
-	@Id
+    private Integer version;
+
+    private String title;
+
+    private Blob content;
+
+    @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name = "DOCUMENT_ID", nullable = false)
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	@Version
+    @Version
     @Column(name = "DOCUMENT_VERSION")
-	public Integer getVersion() {
-		return version;
-	}
+    public Integer getVersion() {
+        return version;
+    }
 
-	public void setVersion(Integer version) {
-		this.version = version;
-	}
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 
-	@Column(name = "DOCUMENT_TITLE")
-	public String getTitle() {
-		return title;
-	}
+    @Column(name = "DOCUMENT_TITLE")
+    public String getTitle() {
+        return title;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-    @org.hibernate.annotations.Type(
-          type = "it.paoloyx.blobcrud.usertypes.BlobUserType"
-      )	
+    @Type(type = "it.paoloyx.blobcrud.usertypes.BlobUserType")
     @Column(name = "DOCUMENT_CONTENT")
-	public Blob getContent() {
-		return content;
-	}
+    public Blob getContent() {
+        return content;
+    }
 
-	public void setContent(Blob content) {
-		this.content = content;
-	}
-	
+    public void setContent(Blob content) {
+        this.content = content;
+    }
+
 }

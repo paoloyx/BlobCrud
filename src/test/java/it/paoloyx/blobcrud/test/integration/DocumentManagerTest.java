@@ -7,11 +7,12 @@ import it.paoloyx.blobcrud.repository.DocumentDAO;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.FileOutputStream;
 import java.sql.Blob;
 
 import junit.framework.Assert;
 
+import org.apache.commons.io.IOUtils;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -28,56 +29,64 @@ import org.springframework.transaction.annotation.Transactional;
 @ContextConfiguration(locations = { "classpath*:META-INF/spring/applicationContext*.xml" })
 @Transactional
 public class DocumentManagerTest {
-	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	private SessionFactory sessionFactory;
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	private DocumentDAO documentDao;
-	
-	@Autowired
-	private FileProvider fileProvider;
+    @Autowired
+    private SessionFactory sessionFactory;
 
-	@Test
-	public void testInsertDocument() {
-		Document doc = new Document();
-		File veryBigFile = new File(fileProvider.getAbsolutePath());
-		FileInputStream finStream = null;
-		try {
-			try {
-				finStream = new FileInputStream(veryBigFile);
-				Session session = this.sessionFactory.getCurrentSession();
-				Blob blob = Hibernate.getLobCreator(session).createBlob(
-						finStream, veryBigFile.length());
-				doc.setContent(blob);
-				logger.info("Created blob from file: " + fileProvider.getAbsolutePath());
-			} catch (FileNotFoundException e) {
-				doc.setContent(null);
-				e.printStackTrace();
-				logger.warn("Warning: file " + fileProvider.getAbsolutePath() + " could not be found. Persisting null binary content");
-			}
-			// persist document
-			Document persistedDoc = documentDao.saveOrUpdate(doc);
-			
-			// flushing the session
-			this.sessionFactory.getCurrentSession().flush();
-			
-			// We clear Hibernate Session, then we retrieve the persisted document
-			this.sessionFactory.getCurrentSession().clear();
-			Document retrievedDoc = documentDao.findByPk(persistedDoc.getId());
-			
-			// Assertion
-			Assert.assertEquals(retrievedDoc.getId(), persistedDoc.getId());
-		}
-		finally {
-			try {
-				finStream.close();
-			} catch (IOException e) {
-				// Unrecoverable error...
-				e.printStackTrace();
-			}
-		}
-	}
+    @Autowired
+    private DocumentDAO documentDao;
+
+    @Autowired
+    private FileProvider fileProvider;
+
+    @Test
+    public void testInsertDocument() {
+        Document doc = new Document();
+        File veryBigFile = new File(fileProvider.getAbsolutePath());
+        FileInputStream finStream = null;
+        FileOutputStream fout = null;
+        long start = 0l;
+        try {
+            try {
+                start = System.currentTimeMillis();
+                finStream = new FileInputStream(veryBigFile);
+                Session session = this.sessionFactory.getCurrentSession();
+                Blob blob = Hibernate.getLobCreator(session).createBlob(finStream, veryBigFile.length());
+                doc.setContent(blob);
+                logger.info("Created blob from file: " + fileProvider.getAbsolutePath());
+            } catch (FileNotFoundException e) {
+                doc.setContent(null);
+                e.printStackTrace();
+                logger.warn("Warning: file " + fileProvider.getAbsolutePath() + " could not be found. Persisting null binary content");
+            }
+            // persist document
+            Document persistedDoc = documentDao.saveOrUpdate(doc);
+
+            // flushing the session
+            this.sessionFactory.getCurrentSession().flush();
+
+            // We clear Hibernate Session, then we retrieve the persisted
+            // document
+            this.sessionFactory.getCurrentSession().clear();
+            Document retrievedDoc = documentDao.findByPk(persistedDoc.getId());
+
+            // Assertion
+            Assert.assertEquals(retrievedDoc.getId(), persistedDoc.getId());
+
+            // Try to write out retrieved file
+            // Blob blob = retrievedDoc.getContent();
+            // fout = new FileOutputStream(fileProvider.getAbsolutePath() +
+            // "_out");
+            // IOUtils.copy(blob.getBinaryStream(), fout);
+            logger.info("Report executed. Elapsed msec: " + (System.currentTimeMillis() - start));
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } finally {
+            IOUtils.closeQuietly(finStream);
+            IOUtils.closeQuietly(fout);
+        }
+    }
 }
